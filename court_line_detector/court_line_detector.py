@@ -5,6 +5,9 @@ from torchvision import models
 import numpy as np
 
 class CourtLineDetector:
+    """
+    Class to detect the lines of the courts
+    """
     def __init__(self, model_path):
         self.model = models.resnet50(pretrained=True)
         self.model.fc = torch.nn.Linear(self.model.fc.in_features, 14*2) 
