@@ -5,6 +5,17 @@ import sys
 sys.path.append('../')
 from utils import measure_distance, get_center_of_bbox
 
+"""
+PlayerTracker: A class for detecting, tracking, and filtering player movements in video frames using YOLO.
+
+Features:
+- Detects player positions and assigns unique tracking IDs.
+- Filters and selects players based on proximity to court keypoints.
+- Supports reading/writing detection results from a stub file.
+- Draws bounding boxes and annotations on detected frames.
+"""
+
+
 class PlayerTracker:
     def __init__(self,model_path):
         self.model = YOLO(model_path)
