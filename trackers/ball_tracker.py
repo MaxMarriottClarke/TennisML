@@ -3,6 +3,18 @@ import cv2
 import pickle
 import pandas as pd
 
+"""
+BallTracker: A class for detecting, tracking, and analyzing ball movement in video frames using YOLO.
+
+Features:
+- Detects ball positions in video frames.
+- Interpolates missing ball positions for smoother tracking.
+- Identifies frames where a ball hit occurs based on movement patterns.
+- Supports reading/writing detection results from a stub file.
+- Draws bounding boxes and annotations on detected frames.
+"""
+
+
 class BallTracker:
     def __init__(self,model_path):
         self.model = YOLO(model_path)
